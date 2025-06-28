@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لمعة الأردن - خدمات جلي البلاط والرخام الاحترافية</title>
+    <meta name="description" content="شركة لمعة الأردن المتخصصة في جلي البلاط والرخام بجميع أنواعه. خدمات احترافية وأسعار مناسبة في جميع أنحاء الأردن">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #2563eb; /* Blue-700 */
+            --secondary-color: #1e40af; /* Blue-800 */
+            --accent-color: #60a5fa; /* Blue-400 */
+            --light-gray: #f8fafc; /* Slate-50 */
+            --dark-gray: #64748b; /* Slate-500 */
+            --text-dark: #1e293b; /* Slate-900 */
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --border-radius-lg: 16px;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.7; /* Slightly increased for readability */
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* General Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg); /* Increased margin for better separation */
+            color: var(--text-dark);
+            position: relative;
+            padding-top: var(--spacing-sm); /* Add some padding for the line below */
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px; /* Slightly wider line */
+            height: 5px; /* Thicker line */
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(8px); /* Slightly less blur for clarity */
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem; /* Reduced gap */
+        }
+        
+        .logo {
+            width: 45px; /* Slightly smaller logo */
+            height: 45px;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            border-radius: 10px; /* Slightly smaller border-radius */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem; /* Slightly smaller icon */
+            box-shadow: var(--shadow);
+            animation: logoGlow 2s infinite alternate;
+        }
+        
+        @keyframes logoGlow {
+            0% { box-shadow: 0 0 8px rgba(96, 165, 250, 0.5); }
+            100% { box-shadow: 0 0 18px rgba(96, 165, 250, 0.8); }
+        }
+        
+        .company-name {
+            font-size: 1.6rem; /* Slightly smaller font size */
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Refined shadow */
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-md);
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden; /* For underline effect */
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-color);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            transform: translateX(0);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.6rem; /* Slightly larger for better touch target */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-top: 80px; /* Adjust based on header height */
+            min-height: calc(100vh - 80px - 200px); /* Account for footer height approximation */
+        }
+        
+        .page {
+            display: none;
+            min-height: calc(100vh - 80px); /* Ensure page takes full viewport height minus header */
+            animation: fadeIn 0.7s ease-out; /* Fade in effect for page transitions */
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-gray), #e2e8f0);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex; /* Use flex for centering content */
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh; /* Make hero section taller */
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><circle cx="20" cy="20" r="3" fill="%232563eb"/><circle cx="80" cy="80" r="3" fill="%232563eb"/><circle cx="50" cy="10" r="2" fill="%232563eb"/><circle cx="10" cy="90" r="2" fill="%232563eb"/></svg>') repeat;
+            animation: float 10s ease-in-out infinite alternate; /* Slower and alternate float */
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem; /* Slightly larger */
+            font-weight: 700;
+            margin-bottom: 1.5rem; /* Increased margin */
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInFromTop 1s ease-out;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .hero p {
+            font-size: 1.4rem; /* Slightly larger */
+            color: var(--dark-gray);
+            margin-bottom: var(--spacing-lg); /* Increased margin */
+            animation: slideInFromBottom 1s ease-out 0.3s both;
+        }
+
+        .hero .btn-primary { /* Added a call to action button */
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            animation: pulse 2s infinite;
+        }
+
+        .hero .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        }
+        
+        @keyframes slideInFromTop {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInFromBottom {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Features Section */
+        .features {
+            padding: var(--spacing-lg) 0;
+            background: var(--white);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .feature-card {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid #e2e8f0;
+            display: flex; /* Use flex for internal alignment */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-color);
+        }
+        
+        .feature-icon {
+            width: 70px; /* Slightly smaller */
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem; /* Slightly smaller */
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem; /* Slightly smaller */
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .feature-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: var(--spacing-lg) 0;
+            background: var(--light-gray);
+        }
+        
+        .testimonials-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            padding-bottom: 2rem; /* Space for navigation dots */
+        }
+        
+        .testimonial {
+            background: var(--white);
+            padding: var(--spacing-md) var(--spacing-md);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+            min-height: 220px; /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .testimonial.active {
+            display: flex; /* Changed to flex for centering */
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem; /* Slightly smaller */
+            font-style: italic;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem; /* Reduced margin */
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1rem; /* Slightly smaller */
+            margin-top: 1rem;
+        }
+        
+        .testimonial-rating {
+            color: #fbbf24; /* Amber-400 */
+            font-size: 1.4rem; /* Slightly smaller */
+            margin-bottom: 0.8rem;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.8rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #cbd5e1; /* Slate-300 */
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active, .dot:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: var(--spacing-lg) 0;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            aspect-ratio: 4/3; /* Maintain aspect ratio */
+            background: linear-gradient(135deg, var(--light-gray), #e2e8f0);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: flex; /* For centering content */
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            /* Placeholder background images - REPLACE WITH REAL IMAGES */
+            /* example: background-image: url('https://via.placeholder.com/600x450/2563eb/ffffff?text=Marble+Polishing'); */
+        }
+
+        /* Add specific placeholder images for each gallery item */
+        .gallery-item:nth-child(1) { background-image: url('https://via.placeholder.com/600x450/2563eb/ffffff?text=Marble+Reception'); }
+        .gallery-item:nth-child(2) { background-image: url('https://via.placeholder.com/600x450/1e40af/ffffff?text=Kitchen+Tiles'); }
+        .gallery-item:nth-child(3) { background-image: url('https://via.placeholder.com/600x450/60a5fa/ffffff?text=Office+Marble'); }
+        .gallery-item:nth-child(4) { background-image: url('https://via.placeholder.com/600x450/2563eb/ffffff?text=Bathroom+Tiles'); }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px); /* Less aggressive hover */
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3); /* Darker overlay for better text contrast */
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9)); /* Stronger gradient */
+            color: white;
+            padding: 1.5rem; /* Reduced padding */
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            z-index: 2;
+            text-align: right; /* Align text to right for RTL */
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.3rem; /* Slightly smaller */
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95rem; /* Slightly smaller */
+            line-height: 1.5;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: var(--spacing-lg) 0;
+            background: var(--light-gray); /* Match testimonials background */
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .contact-card {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .contact-icon {
+            width: 60px; /* Slightly smaller */
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem; /* Reduced margin */
+            color: white;
+            font-size: 1.6rem; /* Slightly smaller */
+        }
+        
+        .contact-card h3 {
+            font-size: 1.2rem; /* Slightly smaller */
+            font-weight: 600;
+            margin-bottom: 0.8rem; /* Reduced margin */
+            color: var(--text-dark);
+        }
+        
+        .contact-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.7rem 1.8rem; /* Slightly reduced padding */
+            border: none;
+            border-radius: 25px;
+            font-size: 0.95rem; /* Slightly smaller */
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex; /* Use inline-flex for icon alignment */
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* Consistent left positioning */
+            background: #25d366; /* WhatsApp green */
+            color: white;
+            width: 55px; /* Slightly smaller */
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem; /* Slightly smaller */
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128c7e; /* Darker green on hover */
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-12px); } /* Increased bounce height */
+            60% { transform: translateY(-6px); }
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--text-dark), #0f172a);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax for better mobile fit */
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem; /* Slightly smaller */
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .footer-section p, .footer-section a, .footer-links li {
+            color: #cbd5e1; /* Slate-300 */
+            text-decoration: none;
+            line-height: 1.7; /* Consistent line height */
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding-right: 0; /* Ensure no default padding for RTL list */
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.7rem; /* Slightly reduced margin */
+            display: flex; /* For icon alignment if added */
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links li a {
+            padding: 0.2rem 0; /* Small padding for clickable area */
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 0.8rem; /* Reduced gap */
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 38px; /* Slightly smaller */
+            height: 38px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155; /* Slate-700 */
+            padding-top: var(--spacing-sm);
+            text-align: center;
+            color: #94a3b8; /* Slate-400 */
+            font-size: 0.9rem;
+        }
+
+        /* Lightbox for Gallery (Basic implementation) */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            background: white;
+            padding: 1rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .lightbox-overlay.active .lightbox-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: var(--border-radius-lg);
+            display: block; /* Remove extra space below image */
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1002;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) { /* Tablets and larger phones */
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: var(--spacing-md);
+            }
+            .features-grid, .gallery-grid, .contact-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) { /* Smaller tablets and phones */
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-lg);
+                max-height: 0; /* For animated slide-down */
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+                max-height: 300px; /* Adjust based on content */
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+
+            .nav-menu a {
+                display: block; /* Make links full width */
+                padding: 0.8rem 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                min-height: 60vh; /* Shorter hero on mobile */
+                padding: var(--spacing-md) 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: var(--spacing-md);
+            }
+            
+            .nav-container, .container {
+                padding: 0 var(--spacing-sm);
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr; /* Stack columns on small screens */
+                text-align: center;
+            }
+
+            .footer-section {
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-links, .social-links {
+                justify-content: center; /* Center footer links/socials */
+            }
+
+            .testimonial {
+                padding: var(--spacing-sm); /* Reduced padding */
+                min-height: 250px; /* Ensure content fits */
+            }
+        }
+
+        @media (max-width: 480px) { /* Extra small phones */
+            .company-name {
+                font-size: 1.4rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: var(--spacing-md);
+            }
+            .feature-card, .contact-card {
+                padding: 1.5rem;
+            }
+            .feature-icon, .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            .feature-card h3, .contact-card h3 {
+                font-size: 1.1rem;
+            }
+            .contact-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.85rem;
+            }
+            .whatsapp-float {
+                width: 45px;
+                height: 45px;
+                font-size: 1.4rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <div class="company-name">لمعة الأردن</div>
+            </div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" onclick="showPage('home')" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="#gallery" onclick="showPage('gallery')" class="nav-link">من أعمالنا</a></li>
+                    <li><a href="#contact" onclick="showPage('contact')" class="nav-link">اتصل بنا</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="home" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>خدمات جلي البلاط والرخام الاحترافية</h1>
+                    <p>نحن متخصصون في جلي وتلميع البلاط والرخام بجميع أنواعه، نقدم خدمات احترافية بأحدث التقنيات والمعدات في جميع أنحاء الأردن</p>
+                    <a href="https://wa.me/962791234567?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" class="btn-primary" target="_blank">
+                        احصل على عرض سعر مجاني <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="container">
+                    <h2 class="section-title">💎 لماذا نحن الأفضل؟</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3>خبرة طويلة</h3>
+                            <p>أكثر من 10 سنوات من الخبرة في مجال جلي البلاط والرخام، مما يضمن لك النتائج المثالية.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>معدات متطورة</h3>
+                            <p>نستخدم أحدث المعدات والأدوات المتخصصة في جلي وتلميع جميع أنواع البلاط والرخام.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h3>أسعار مناسبة</h3>
+                            <p>نقدم أفضل الأسعار في السوق مع ضمان جودة الخدمة والنتائج المبهرة.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>نتائج احترافية</h3>
+                            <p>نضمن لك الحصول على أرضيات لامعة وبراقة تدوم لفترة طويلة.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials">
+                <div class="container">
+                    <h2 class="section-title">✨ ماذا قال العملاء عنا؟</h2>
+                    <div class="testimonials-slider">
+                        <div class="testimonial active">
+                            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                            <p class="testimonial-text">"خدمة ممتازة ونتائج رائعة! أرضية منزلي أصبحت تبدو كأنها جديدة تماماً. أنصح الجميع بالتعامل مع شركة لمعة الأردن."</p>
+                            <div class="testimonial-author">أحمد محمد - عمان</div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                            <p class="testimonial-text">"فريق العمل محترف جداً والأسعار معقولة. الرخام في مكتبي أصبح يلمع بشكل مذهل. شكراً لكم على الخدمة المميزة."</p>
+                            <div class="testimonial-author">سارة أحمد - إربد</div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                            <p class="testimonial-text">"سرعة في الإنجاز ودقة في العمل. البلاط في المطعم أصبح يبدو جديداً تماماً. أفضل شركة جلي في الأردن."</p>
+                            <div class="testimonial-author">خالد العلي - الزرقاء</div>
+                        </div>
+                        <div class="slider-dots" id="testimonial-dots">
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="gallery" class="page">
+            <section class="gallery"> <div class="container">
+                    <h2 class="section-title">📷 من أعمالنا</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/2563eb/ffffff?text=Marble+Reception+-+Large">
+                            <div class="gallery-overlay">
+                                <h3>جلي رخام صالة استقبال</h3>
+                                <p>تلميع احترافي لرخام صالة استقبال فاخرة.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/1e40af/ffffff?text=Kitchen+Tiles+-+Large">
+                            <div class="gallery-overlay">
+                                <h3>جلي بلاط مطبخ</h3>
+                                <p>إعادة تأهيل وتلميع بلاط مطبخ منزلي.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/60a5fa/ffffff?text=Office+Marble+-+Large">
+                            <div class="gallery-overlay">
+                                <h3>جلي رخام مكتب</h3>
+                                <p>تلميع رخام مكتب تجاري بنتائج مبهرة.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/2563eb/ffffff?text=Bathroom+Tiles+-+Large">
+                            <div class="gallery-overlay">
+                                <h3>جلي بلاط حمام</h3>
+                                <p>تنظيف وتلميع بلاط حمام بلمعة رائعة.</p>
+                            </div>
+                        </div>
+                         <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/1e40af/ffffff?text=Terrace+Tiles+-+Large">
+                            <div class="gallery-overlay">
+                                <h3>جلي بلاط تراس</h3>
+                                <p>تجديد بلاط التراس الخارجي.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/60a5fa/ffffff?text=Stairs+Polishing+-+Large">
+                            <div class="gallery-overlay">
+                                <h3>تلميع درج رخام</h3>
+                                <p>إعادة البريق لأدراج الرخام.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="contact" class="page">
+            <section class="contact"> <div class="container">
+                    <h2 class="section-title">📞 اتصل بنا</h2>
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>اتصل بنا مباشرة</h3>
+                            <p>للحصول على استشارة مجانية وموعد للمعاينة.</p>
+                            <a href="tel:+962791234567" class="contact-btn">
+                                <i class="fas fa-phone-alt"></i> اتصل الآن
+                            </a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3>تواصل عبر واتساب</h3>
+                            <p>أرسل لنا رسالة واستفسر عن خدماتنا وعروضنا.</p>
+                            <a href="https://wa.me/962791234567?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" target="_blank" class="contact-btn">
+                                <i class="fab fa-whatsapp"></i> أرسل واتساب
+                            </a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                            <h3>صفحتنا على فيسبوك</h3>
+                            <p>تابعنا لمشاهدة أحدث أعمالنا والعروض الخاصة.</p>
+                            <a href="https://facebook.com/lamaat.jordan" target="_blank" class="contact-btn">
+                                <i class="fab fa-facebook-f"></i> زيارة الصفحة
+                            </a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <h3>حسابنا على إنستغرام</h3>
+                            <p>شاهد صور أعمالنا قبل وبعد التلميع.</p>
+                            <a href="https://instagram.com/lamaat.jordan" target="_blank" class="contact-btn">
+                                <i class="fab fa-instagram"></i> زيارة الحساب
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <a href="https://wa.me/962791234567?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" class="whatsapp-float" target="_blank" aria-label="WhatsApp chat with Lam'at Al Urdun">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>لمعة الأردن</h3>
+                    <p>شركة متخصصة في جلي البلاط والرخام بجميع أنواعه، نقدم خدمات احترافية بأحدث التقنيات في جميع أنحاء المملكة الأردنية الهاشمية.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/lamaat.jordan" class="social-link" target="_blank" aria-label="Facebook Page">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/lamaat.jordan" class="social-link" target="_blank" aria-label="Instagram Profile">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/962791234567" class="social-link" target="_blank" aria-label="WhatsApp Chat">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" onclick="showPage('home')">الرئيسية</a></li>
+                        <li><a href="#gallery" onclick="showPage('gallery')">من أعمالنا</a></li>
+                        <li><a href="#contact" onclick="showPage('contact')">اتصل بنا</a></li>
+                        <li><a href="#testimonials-section" onclick="scrollToSection('testimonials')">آراء العملاء</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>خدماتنا</h3>
+                    <ul class="footer-links">
+                        <li>جلي البلاط العادي</li>
+                        <li>جلي الرخام الطبيعي</li>
+                        <li>جلي الجرانيت</li>
+                        <li>تلميع السيراميك</li>
+                        <li>معالجة الخدوش والبقع</li>
+                        <li>تلميع الأرضيات بمواد كريستال</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>معلومات التواصل</h3>
+                    <p><i class="fas fa-phone-alt"></i> +962 79 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@lamaat-jordan.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
+                    <p><i class="fas fa-clock"></i> نعمل يومياً من 8 صباحاً حتى 6 مساءً</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> لمعة الأردن - جميع الحقوق محفوظة | تصميم وتطوير احترافي</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Image" id="lightboxImage">
+        </div>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Navigation functionality
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Update navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Find the clicked link and add 'active' class
+            const clickedLink = document.querySelector(`.nav-link[href="#${pageId}"]`);
+            if (clickedLink) {
+                clickedLink.classList.add('active');
+            }
+            
+            // Close mobile menu if open
+            document.getElementById('navMenu').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+            const menuIcon = document.querySelector('.mobile-menu-btn i');
+            if (navMenu.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Testimonials slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const testimonialDotsContainer = document.getElementById('testimonial-dots');
+
+        function createTestimonialDots() {
+            testimonials.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (index === 0) {
+                    dot.classList.add('active');
+                }
+                dot.addEventListener('click', () => showTestimonial(index));
+                testimonialDotsContainer.appendChild(dot);
+            });
+        }
+
+        function showTestimonial(index) {
+            testimonials[currentTestimonial].classList.remove('active');
+            testimonialDotsContainer.children[currentTestimonial].classList.remove('active');
+            
+            currentTestimonial = index;
+            
+            testimonials[currentTestimonial].classList.add('active');
+            testimonialDotsContainer.children[currentTestimonial].classList.add('active');
+        }
+
+        function showNextTestimonial() {
+            let nextIndex = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextIndex);
+        }
+        
+        // Auto-slide testimonials every 5 seconds
+        let testimonialInterval = setInterval(showNextTestimonial, 5000);
+
+        // Stop auto-slide on dot hover/click
+        testimonialDotsContainer.addEventListener('mouseenter', () => clearInterval(testimonialInterval));
+        testimonialDotsContainer.addEventListener('mouseleave', () => {
+            testimonialInterval = setInterval(showNextTestimonial, 5000);
+        });
+
+        // Smooth scrolling for internal links (footer & nav)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                if (targetId) { // Check if targetId is not empty
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - (document.querySelector('.header').offsetHeight + 20), // Adjust for fixed header and some padding
+                            behavior: 'smooth'
+                        });
+                        // Update active nav link for smooth scroll
+                        const navLinks = document.querySelectorAll('.nav-link');
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        const clickedLink = document.querySelector(`.nav-link[href="#${targetId}"]`);
+                        if (clickedLink) {
+                            clickedLink.classList.add('active');
+                        }
+                        // Close mobile menu if open
+                        document.getElementById('navMenu').classList.remove('active');
+                        const menuIcon = document.querySelector('.mobile-menu-btn i');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        // Function to handle scroll animations for feature cards, gallery items, and contact cards
+        function handleScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.feature-card, .gallery-item, .contact-card');
+            animatedElements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isVisible = (rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8) && (rect.bottom >= 0);
+
+                if (isVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                } else {
+                    // Reset opacity/transform if element scrolls out of view, to re-animate on scroll back
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                }
+            });
+        }
+        
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            // Initial opacity/transform for elements that will animate on scroll
+            const animatedElements = document.querySelectorAll('.feature-card, .gallery-item, .contact-card');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            });
+            handleScrollAnimations(); // Trigger initial check
+            document.body.style.opacity = '1'; // Fade in body after load
+            createTestimonialDots(); // Create dots for testimonial slider
+        });
+        
+        // Listen for scroll events to trigger animations (throttled for performance)
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(handleScrollAnimations, 100);
+        });
+        
+        // Gallery Lightbox functionality
+        const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imageUrl = this.getAttribute('data-image');
+                if (imageUrl) {
+                    lightboxImage.src = imageUrl;
+                    lightboxOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+                }
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightboxOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay) { // Only close if clicking outside the image
+                lightboxOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+
+        // Add ripple animation CSS for buttons (already in style block, but can be added here if dynamic)
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                from { transform: scale(0); opacity: 0.7; }
+                to { transform: scale(4); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Ripple effect for contact buttons
+        document.querySelectorAll('.contact-btn, .btn-primary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - (size / 2);
+                const y = e.clientY - rect.top - (size / 2);
+
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                ripple.classList.add('ripple-effect');
+                
+                this.appendChild(ripple);
+                
+                ripple.addEventListener('animationend', () => {
+                    ripple.remove();
+                });
+            });
+        });
+        
+        // Add ripple animation CSS (if not already included)
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            .ripple-effect {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.4);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                pointer-events: none;
+                z-index: 1; /* Ensure ripple is above content but below text */
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // Floating particles effect (refined)
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = Math.random() * 3 + 2 + 'px'; // 2-5px
+            particle.style.height = particle.style.width;
+            particle.style.background = 'rgba(96, 165, 250, ' + (0.1 + Math.random() * 0.2) + ')'; // More subtle opacity
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '1';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.animation = `floatUp ${8 + Math.random() * 4}s linear forwards infinite alternate`; // Longer, infinite, alternate
+            particle.style.animationDelay = `-${Math.random() * 8}s`; // Stagger animation start
+
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, (8 + Math.random() * 4) * 1000); // Remove after animation cycle
+        }
+        
+        // Add floating animation CSS (if not already included)
+        const floatAnimStyle = document.createElement('style');
+        floatAnimStyle.textContent += `
+            @keyframes floatUp {
+                0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.5; }
+                50% { transform: translateY(-${window.innerHeight / 2}px) translateX(${Math.random() > 0.5 ? '20px' : '-20px'}) rotate(180deg); opacity: 0.3; }
+                100% { transform: translateY(-${window.innerHeight + 50}px) translateX(0) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(floatAnimStyle);
+        
+        // Create floating particles periodically
+        for (let i = 0; i < 20; i++) { // Increase particle count
+            createParticle();
+        }
+        setInterval(createParticle, 5000); // Create new particles less frequently
+
+    </script>
+</body>
+</html>
