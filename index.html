@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لمعة الأردن - خدمات جلي البلاط والرخام الاحترافية</title>
-    <meta name="description" content="شركة لمعة الأردن المتخصصة في جلي البلاط والرخام بجميع أنواعه. خدمات احترافية وأسعار مناسبة في جميع أنحاء الأردن">
+    <title>جلي بلاط رخام ابو عون - خدمات جلي البلاط والرخام الاحترافية</title>
+    <meta name="description" content="شركة جلي بلاط رخام ابو عون المتخصصة في جلي البلاط والرخام بجميع أنواعه. خدمات احترافية وأسعار مناسبة في جميع أنحاء الأردن">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
@@ -119,6 +119,13 @@
             font-size: 1.4rem; /* Slightly smaller icon */
             box-shadow: var(--shadow);
             animation: logoGlow 2s infinite alternate;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* or 'cover' depending on desired fit */
+            border-radius: 10px;
         }
         
         @keyframes logoGlow {
@@ -459,15 +466,14 @@
             justify-content: center;
             background-size: cover;
             background-position: center;
-            /* Placeholder background images - REPLACE WITH REAL IMAGES */
-            /* example: background-image: url('https://via.placeholder.com/600x450/2563eb/ffffff?text=Marble+Polishing'); */
         }
 
-        /* Add specific placeholder images for each gallery item */
-        .gallery-item:nth-child(1) { background-image: url('https://via.placeholder.com/600x450/2563eb/ffffff?text=Marble+Reception'); }
-        .gallery-item:nth-child(2) { background-image: url('https://via.placeholder.com/600x450/1e40af/ffffff?text=Kitchen+Tiles'); }
-        .gallery-item:nth-child(3) { background-image: url('https://via.placeholder.com/600x450/60a5fa/ffffff?text=Office+Marble'); }
-        .gallery-item:nth-child(4) { background-image: url('https://via.placeholder.com/600x450/2563eb/ffffff?text=Bathroom+Tiles'); }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
         
         .gallery-item:hover {
             transform: translateY(-5px); /* Less aggressive hover */
@@ -511,14 +517,9 @@
 
         .gallery-overlay h3 {
             font-size: 1.3rem; /* Slightly smaller */
-            margin-bottom: 0.5rem;
+            margin-bottom: 0; /* Removed margin-bottom as p tag is removed */
         }
 
-        .gallery-overlay p {
-            font-size: 0.95rem; /* Slightly smaller */
-            line-height: 1.5;
-        }
-        
         /* Contact */
         .contact {
             padding: var(--spacing-lg) 0;
@@ -921,9 +922,9 @@
         <div class="nav-container">
             <div class="logo-container">
                 <div class="logo">
-                    <i class="fas fa-gem"></i>
+                    <img src="logo.jpg" alt="Company Logo">
                 </div>
-                <div class="company-name">لمعة الأردن</div>
+                <div class="company-name">جلي بلاط رخام ابو عون</div>
             </div>
             <nav>
                 <ul class="nav-menu" id="navMenu">
@@ -944,7 +945,7 @@
                 <div class="hero-content">
                     <h1>خدمات جلي البلاط والرخام الاحترافية</h1>
                     <p>نحن متخصصون في جلي وتلميع البلاط والرخام بجميع أنواعه، نقدم خدمات احترافية بأحدث التقنيات والمعدات في جميع أنحاء الأردن</p>
-                    <a href="https://wa.me/962791234567?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" class="btn-primary" target="_blank">
+                    <a href="https://wa.me/962795393857?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" class="btn-primary" target="_blank">
                         احصل على عرض سعر مجاني <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -992,7 +993,7 @@
                     <div class="testimonials-slider">
                         <div class="testimonial active">
                             <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                            <p class="testimonial-text">"خدمة ممتازة ونتائج رائعة! أرضية منزلي أصبحت تبدو كأنها جديدة تماماً. أنصح الجميع بالتعامل مع شركة لمعة الأردن."</p>
+                            <p class="testimonial-text">"خدمة ممتازة ونتائج رائعة! أرضية منزلي أصبحت تبدو كأنها جديدة تماماً. أنصح الجميع بالتعامل مع شركة جلي بلاط رخام ابو عون."</p>
                             <div class="testimonial-author">أحمد محمد - عمان</div>
                         </div>
                         <div class="testimonial">
@@ -1016,40 +1017,40 @@
             <section class="gallery"> <div class="container">
                     <h2 class="section-title">📷 من أعمالنا</h2>
                     <div class="gallery-grid">
-                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/2563eb/ffffff?text=Marble+Reception+-+Large">
+                        <div class="gallery-item" data-image="1.jpg">
+                            <img src="1.jpg" alt="جلي رخام صالة استقبال">
                             <div class="gallery-overlay">
                                 <h3>جلي رخام صالة استقبال</h3>
-                                <p>تلميع احترافي لرخام صالة استقبال فاخرة.</p>
                             </div>
                         </div>
-                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/1e40af/ffffff?text=Kitchen+Tiles+-+Large">
+                        <div class="gallery-item" data-image="2.jpg">
+                            <img src="2.jpg" alt="جلي بلاط مطبخ">
                             <div class="gallery-overlay">
                                 <h3>جلي بلاط مطبخ</h3>
-                                <p>إعادة تأهيل وتلميع بلاط مطبخ منزلي.</p>
                             </div>
                         </div>
-                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/60a5fa/ffffff?text=Office+Marble+-+Large">
+                        <div class="gallery-item" data-image="3.jpg">
+                            <img src="3.jpg" alt="جلي رخام مكتب">
                             <div class="gallery-overlay">
                                 <h3>جلي رخام مكتب</h3>
-                                <p>تلميع رخام مكتب تجاري بنتائج مبهرة.</p>
                             </div>
                         </div>
-                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/2563eb/ffffff?text=Bathroom+Tiles+-+Large">
+                        <div class="gallery-item" data-image="4.jpg">
+                            <img src="4.jpg" alt="جلي بلاط حمام">
                             <div class="gallery-overlay">
                                 <h3>جلي بلاط حمام</h3>
-                                <p>تنظيف وتلميع بلاط حمام بلمعة رائعة.</p>
                             </div>
                         </div>
-                         <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/1e40af/ffffff?text=Terrace+Tiles+-+Large">
+                         <div class="gallery-item" data-image="5.jpg">
+                            <img src="5.jpg" alt="جلي بلاط تراس">
                             <div class="gallery-overlay">
                                 <h3>جلي بلاط تراس</h3>
-                                <p>تجديد بلاط التراس الخارجي.</p>
                             </div>
                         </div>
-                        <div class="gallery-item" data-image="https://via.placeholder.com/1200x900/60a5fa/ffffff?text=Stairs+Polishing+-+Large">
+                        <div class="gallery-item" data-image="6.jpg">
+                            <img src="6.jpg" alt="تلميع درج رخام">
                             <div class="gallery-overlay">
                                 <h3>تلميع درج رخام</h3>
-                                <p>إعادة البريق لأدراج الرخام.</p>
                             </div>
                         </div>
                     </div>
@@ -1067,7 +1068,7 @@
                             </div>
                             <h3>اتصل بنا مباشرة</h3>
                             <p>للحصول على استشارة مجانية وموعد للمعاينة.</p>
-                            <a href="tel:+962791234567" class="contact-btn">
+                            <a href="tel:+962795393857" class="contact-btn">
                                 <i class="fas fa-phone-alt"></i> اتصل الآن
                             </a>
                         </div>
@@ -1077,7 +1078,7 @@
                             </div>
                             <h3>تواصل عبر واتساب</h3>
                             <p>أرسل لنا رسالة واستفسر عن خدماتنا وعروضنا.</p>
-                            <a href="https://wa.me/962791234567?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" target="_blank" class="contact-btn">
+                            <a href="https://wa.me/962795393857?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" target="_blank" class="contact-btn">
                                 <i class="fab fa-whatsapp"></i> أرسل واتساب
                             </a>
                         </div>
@@ -1087,7 +1088,7 @@
                             </div>
                             <h3>صفحتنا على فيسبوك</h3>
                             <p>تابعنا لمشاهدة أحدث أعمالنا والعروض الخاصة.</p>
-                            <a href="https://facebook.com/lamaat.jordan" target="_blank" class="contact-btn">
+                            <a href="https://www.facebook.com/profile.php?id=100072749016812" target="_blank" class="contact-btn">
                                 <i class="fab fa-facebook-f"></i> زيارة الصفحة
                             </a>
                         </div>
@@ -1097,7 +1098,7 @@
                             </div>
                             <h3>حسابنا على إنستغرام</h3>
                             <p>شاهد صور أعمالنا قبل وبعد التلميع.</p>
-                            <a href="https://instagram.com/lamaat.jordan" target="_blank" class="contact-btn">
+                            <a href="https://www.instagram.com/jali.jo2?igsh=cmMxb3djejNibHM0" target="_blank" class="contact-btn">
                                 <i class="fab fa-instagram"></i> زيارة الحساب
                             </a>
                         </div>
@@ -1107,7 +1108,7 @@
         </div>
     </main>
 
-    <a href="https://wa.me/962791234567?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" class="whatsapp-float" target="_blank" aria-label="WhatsApp chat with Lam'at Al Urdun">
+    <a href="https://wa.me/962795393857?text=مرحباً، أود الاستفسار عن خدمات جلي البلاط والرخام" class="whatsapp-float" target="_blank" aria-label="WhatsApp chat with جلي بلاط رخام ابو عون">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1115,16 +1116,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>لمعة الأردن</h3>
+                    <h3>جلي بلاط رخام ابو عون</h3>
                     <p>شركة متخصصة في جلي البلاط والرخام بجميع أنواعه، نقدم خدمات احترافية بأحدث التقنيات في جميع أنحاء المملكة الأردنية الهاشمية.</p>
                     <div class="social-links">
-                        <a href="https://facebook.com/lamaat.jordan" class="social-link" target="_blank" aria-label="Facebook Page">
+                        <a href="https://www.facebook.com/profile.php?id=100072749016812" class="social-link" target="_blank" aria-label="Facebook Page">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/lamaat.jordan" class="social-link" target="_blank" aria-label="Instagram Profile">
+                        <a href="https://www.instagram.com/jali.jo2?igsh=cmMxb3djejNibHM0" class="social-link" target="_blank" aria-label="Instagram Profile">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/962791234567" class="social-link" target="_blank" aria-label="WhatsApp Chat">
+                        <a href="https://wa.me/962795393857" class="social-link" target="_blank" aria-label="WhatsApp Chat">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -1151,14 +1152,13 @@
                 </div>
                 <div class="footer-section">
                     <h3>معلومات التواصل</h3>
-                    <p><i class="fas fa-phone-alt"></i> +962 79 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> info@lamaat-jordan.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +962 795393857</p>
                     <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
                     <p><i class="fas fa-clock"></i> نعمل يومياً من 8 صباحاً حتى 6 مساءً</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> لمعة الأردن - جميع الحقوق محفوظة | تصميم وتطوير احترافي</p>
+                <p>&copy; <span id="current-year"></span> جلي بلاط رخام ابو عون - جميع الحقوق محفوظة | تصميم وتطوير احترافي</p>
             </div>
         </div>
     </footer>
